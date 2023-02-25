@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filmsimulator-air"
+version = "0.1.0"
+description = "FilmSimulatorAir: film-grain rendering CLI with physical-ish density-domain grain and auto content adaptation."
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.23",
+  "Pillow>=9.0",
+]
+
+[project.optional-dependencies]
+depth = ["torch", "opencv-python"]
+
+[project.scripts]
+film-simulator-air = "filmsimulator_air.cli:main"
+FilmSimulatorAir = "filmsimulator_air.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
